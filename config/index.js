@@ -7,6 +7,7 @@
 var path = require('path');
 var _ = require('lodash');
 
+//I ca n use it to validate later whether the variable is installed
 function requiredProcessEnv(name) {
     if(!process.env[name]) {
         throw new Error('You must set the ' + name + ' environment variable');
@@ -35,10 +36,11 @@ var all = {
         options: {
             db: {
                 safe: true
-            },
-            server: {
-                poolSize: 5
             }
+            //,
+            // server: {
+            //     poolSize: 5
+            // }
 
         }
     }
@@ -47,7 +49,6 @@ var all = {
 };
 
 // Merge configs from this main file with environment specific configs
-// ==============================================
 var environment = process.env.NODE_ENV || 'development';
 
 
@@ -55,27 +56,3 @@ module.exports = _.merge(
     all,
     require('./' + environment + '.js') || {});
 
-
-
-//
-// module.exports = {
-//     development: {
-//         db: "mongodb://admin:admin@ds143221.mlab.com:43221/wbagora",
-//         // db: "mongodb://admin:admin@localhost:43221/wbagora",
-//         port: process.env.PORT || 3000,
-//         secretKey: "superSecretKeyForSigning"
-//     },
-//     staging:{
-//         db: "mongodb://admin:admin@ds143221.mlab.com:43221/wbagora",
-//         // db: "mongodb://admin:admin@localhost:43221/wbagora",
-//         port: process.env.PORT || 3000,
-//         secretKey: "superSecretKeyForSigning"
-//     },
-//     production: {
-//         db: "mongodb://admin:admin@ds143221.mlab.com:43221/wbagora",
-//         // db: "mongodb://admin:admin@localhost:43221/wbagora",
-//         port: process.env.PORT || 3000,
-//         secretKey: "superSecretKeyForSigning"
-//     }
-//
-// };
