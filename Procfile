@@ -1,1 +1,2 @@
-web: bash -c 'exec /user/binnodemon /vagrant/bin/www'
+web: node app.js
+#web: bash -c 'exec /user/bin/nodemon /vagrant/bin/www'
