@@ -3,7 +3,7 @@
 <head>
     <title><%= title %></title>
 
-    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
@@ -19,8 +19,8 @@
             <div class="col-md-offset-3 col-md-6">
                 <a href="/req.pdf" class="btn btn-info">Intrepretation</a>
                 <a href="/req.pdf" class="btn btn-danger">Assumptions</a>
-                <a href="/db.pdf"class="btn btn-warning">Database Design</a>
-                    <a href="/tech.pdf"class="btn btn-info">Tech Stack</a>
+                <a href="/db.pdf" class="btn btn-warning">Database Design</a>
+                <a href="/tech.pdf" class="btn btn-info">Tech Stack</a>
 
             </div>
         </div>
@@ -28,7 +28,9 @@
         <div class="row" style="margin-top: 10px">
             <div class="col-sm-12 ">
                 <div class="stackoverflow"><a href="http://stackoverflow.com/users/1334561/msoliman">
-                        <img src="http://stackoverflow.com/users/flair/1334561.png?theme=clean" width="208" height="58" alt="profile for msoliman at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for msoliman at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                        <img src="http://stackoverflow.com/users/flair/1334561.png?theme=clean" width="208" height="58"
+                             alt="profile for msoliman at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                             title="profile for msoliman at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
                     </a></div>
                 <div><a href="http://msoliman.me">http://msoliman.me</a></div>
             </div>
@@ -54,7 +56,8 @@
                         </div>
                         <div class="col-md-6">GET <a href="/api/users">/api/users/</a></div>
                     </div>
-                </div> <div class="list-group-item">
+                </div>
+                <div class="list-group-item">
                     <div class="row">
                         <div class="col-md-6">
                             Get All Users <span class="badge badge-important">Full profile</span>
@@ -184,24 +187,25 @@
                 </div>
                 <div class="list-group-item"><a href="/postman/Agora.postman_collection.json">Download Collection v1</a>
                 </div>
-                <div class="list-group-item"><a href="/postman/Agora.postman_collectionv2.json">Download Collection v2</a>
+                <div class="list-group-item"><a href="/postman/Agora.postman_collectionv2.json">Download Collection
+                        v2</a>
                 </div>
                 <div class="list-group-item">
                     <div class="row">
                         <div class="col-md-12"><h5>Note: You should have 3 variables in your environment</h5></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2"> <code>{{baseUrl}}</code></div>
+                        <div class="col-md-2"><code>{{baseUrl}}</code></div>
                         <div class="col-md-10">refers to absolute URL e.g. http://localhost:3000</div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2"> <code>{{userId}}</code></div>
+                        <div class="col-md-2"><code>{{userId}}</code></div>
                         <div class="col-md-10"> refers to test user id that you created or you can pick any
                             user from GET /api/users/
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2"> <code>{{matchId}}</code></div>
+                        <div class="col-md-2"><code>{{matchId}}</code></div>
                         <div class="col-md-10"> refers to test match id that you created or you can pick
                             any user from GET
                             /api/matches/
@@ -225,9 +229,11 @@
                     <div class="list-group-item list-group-item-warning text-center"> Using Vagrant</div>
                     <div class="list-group-item"><h5>Step 1:</h5> Open terminal and run <code># vagrant up</code></div>
                     <div class="list-group-item"><h5>Step 2:</h5> Browse <code>http://localhost:3000</code></div>
-                    <div class="list-group-item">Bash Script written to hook and provision the code into vagrant box can be found in <code>Vagrantfile</code>.
+                    <div class="list-group-item">Bash Script was written to hook and provision the code into vagrant box can
+                        be found in <code>Vagrantfile</code>.
 
-                        I used <code>foreman</code> and <code>nodemon</code> to write a simple agora service you can check it out
+                        I used <code>foreman</code> and <code>nodemon</code> to write a simple agora service you can
+                        check it out
                         <code># sudo service agora status|start|stop</code>
                     </div>
 
@@ -241,29 +247,32 @@
                     <div class="list-group-item text-center">Not implemented yet, however below is the idea</div>
                     <div class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-12"><h5>2 docker containers should be pulled and linked together</h5> </div>
+                            <div class="col-sm-12"><h5>2 docker containers should be pulled and linked together</h5>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12"><h5>1. Run MongoDB and expose 27017</h5></div>
-                            <div class="col-sm-12"> <code># docker run --rm -d --name mongo-db -p 27017:27017 mongo </code></div>
-                            <div class="col-sm-12"><h5>2. Run NodeJS app, link with MongoDB, hook our code into container and expose 3000</h5></div>
-                            <div class="col-sm-12"> <code># docker run --rm -d --link mongo-db:mongo-db --name game-service -p 3000:3000 -v $(pwd):/mygame -w /mygame node node bin/www</code></div>
+                            <div class="col-sm-12"><code># docker run --rm -d --name mongo-db -p 27017:27017
+                                    mongo </code></div>
+                            <div class="col-sm-12"><h5>2. Run NodeJS app, link with MongoDB, hook our code into
+                                    container and expose 3000</h5></div>
+                            <div class="col-sm-12"><code># docker run --rm -d --link mongo-db:mongo-db --name
+                                    game-service -p 3000:3000 -v $(pwd):/mygame -w /mygame node node bin/www</code>
+                            </div>
 
                             <div class="col-sm-12"><h5>3. Simply browse <code>http://localhost:3000</code></h5></div>
                         </div>
 
 
-
-
+                    </div>
                 </div>
+
             </div>
-
         </div>
+
+
     </div>
-
-
 </div>
-
 
 </body>
 </html>
