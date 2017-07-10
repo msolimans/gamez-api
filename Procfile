@@ -1,0 +1,1 @@
+web: bash -c 'exec /user/binnodemon /vagrant/bin/www'

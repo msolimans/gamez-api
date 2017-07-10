@@ -1,0 +1,20 @@
+{
+  "name": "agora",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Muhammad Soliman <msuliman@mum.edu>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

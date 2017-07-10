@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row jumbotron text-center">
+        <h2>Welcome to Gaming Service !</h2>
+        <p>List of services</p>
+        <p>Code is documented</p>
+
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <a href="/req.pdf" class="btn btn-info">Intrepretation</a>
+                <a href="/req.pdf" class="btn btn-danger">Assumptions</a>
+                <a href="/db.pdf"class="btn btn-warning">Database Design</a>
+                    <a href="/tech.pdf"class="btn btn-info">Tech Stack</a>
+
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-12 ">
+                <div class="stackoverflow"><a href="http://stackoverflow.com/users/1334561/msoliman">
+                        <img src="http://stackoverflow.com/users/flair/1334561.png?theme=clean" width="208" height="58" alt="profile for msoliman at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for msoliman at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                    </a></div>
+                <div><a href="http://msoliman.me">http://msoliman.me</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="list-group">
+                <div class="list-group-item-heading">
+                    <div class="list-group-item list-group-item-info text-center text-green">Users</div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">Create New User</div>
+                        <div class="col-md-6">POST /api/users</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get All Users <span class="badge badge-important">Personal Info Only</span>
+                        </div>
+                        <div class="col-md-6">GET <a href="/api/users">/api/users/</a></div>
+                    </div>
+                </div> <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get All Users <span class="badge badge-important">Full profile</span>
+                        </div>
+                        <div class="col-md-6">GET <a href="/api/users/full">/api/users/full</a></div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get User By Id <span class="badge badge-important">Personal Info Only</span>
+                        </div>
+                        <div class="col-md-6"> GET /api/users/{{userId}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get User By Id <span class="badge badge-important">Full Profile</span>
+                        </div>
+                        <div class="col-md-6"> GET /api/users/full/{{userId}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Update User's Info By Id
+                        </div>
+                        <div class="col-md-6">PUT /api/users/{{userId}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Delete User By Id
+                        </div>
+                        <div class="col-md-6"> DELETE /api/users/{{userId}}</div>
+                    </div>
+                </div>
+
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get Stats For User
+                        </div>
+                        <div class="col-md-6"> GET /api/users/stats/{{userId}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Update Stats For User
+                        </div>
+                        <div class="col-md-6"> PUT /api/users/stats/{{userId}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Reset Stats For User
+                        </div>
+                        <div class="col-md-6"> DELETE /api/users/stats/{{userId}}</div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get Current Match For User
+                        </div>
+                        <div class="col-md-6">
+                            GET /api/users/match/{{userId}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Update My Matches
+                        </div>
+                        <div class="col-md-6">PUT /api/users/match/{{userId}}</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="list-group">
+                <div class="list-group-item-heading">
+                    <div class="list-group-item list-group-item-danger text-center">Matches</div>
+                </div>
+
+
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Create New Match
+                        </div>
+                        <div class="col-md-6">POST /api/matches/</div>
+                    </div>
+
+                </div>
+                <div class="list-group-item">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            Get All Matches
+                        </div>
+                        <div class="col-md-6">GET <a href="/api/matches/">/api/matches/</a></div>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Add New Player(s) To Match
+                        </div>
+                        <div class="col-md-6">PUT /api/matches/{{matchId}}</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="list-group">
+                <div class="list-group-item-heading">
+                    <div class="list-group-item list-group-item-success text-center">POSTMAN Tests</div>
+                </div>
+                <div class="list-group-item"><a href="/postman/Agora.postman_collection.json">Download Collection v1</a>
+                </div>
+                <div class="list-group-item"><a href="/postman/Agora.postman_collectionv2.json">Download Collection v2</a>
+                </div>
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-12"><h5>Note: You should have 3 variables in your environment</h5></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"> <code>{{baseUrl}}</code></div>
+                        <div class="col-md-10">refers to absolute URL e.g. http://localhost:3000</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"> <code>{{userId}}</code></div>
+                        <div class="col-md-10"> refers to test user id that you created or you can pick any
+                            user from GET /api/users/
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"> <code>{{matchId}}</code></div>
+                        <div class="col-md-10"> refers to test match id that you created or you can pick
+                            any user from GET
+                            /api/matches/
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-info">
+            <div class="panel-heading">Provisioning</div>
+            <div class="panel-body">
+                <div class="col-md-6">
+
+                    <div class="list-group-item list-group-item-warning text-center"> Using Vagrant</div>
+                    <div class="list-group-item"><h5>Step 1:</h5> Open terminal and run <code># vagrant up</code></div>
+                    <div class="list-group-item"><h5>Step 2:</h5> Browse <code>http://localhost:3000</code></div>
+                    <div class="list-group-item">Bash Script written to hook and provision the code into vagrant box can be found in <code>Vagrantfile</code>.
+
+                        I used <code>foreman</code> and <code>nodemon</code> to write a simple agora service you can check it out
+                        <code># sudo service agora status|start|stop</code>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="list-group-item list-group-item-warning text-center"> Using Docker</div>
+                    <div class="list-group-item text-center">Not implemented yet, however below is the idea</div>
+                    <div class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-12"><h5>2 docker containers should be pulled and linked together</h5> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12"><h5>1. Run MongoDB and expose 27017</h5></div>
+                            <div class="col-sm-12"> <code># docker run --rm -d --name mongo-db -p 27017:27017 mongo </code></div>
+                            <div class="col-sm-12"><h5>2. Run NodeJS app, link with MongoDB, hook our code into container and expose 3000</h5></div>
+                            <div class="col-sm-12"> <code># docker run --rm -d --link mongo-db:mongo-db --name game-service -p 3000:3000 -v $(pwd):/mygame -w /mygame node node bin/www</code></div>
+
+                            <div class="col-sm-12"><h5>3. Simply browse <code>http://localhost:3000</code></h5></div>
+                        </div>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

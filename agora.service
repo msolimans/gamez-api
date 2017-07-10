@@ -1,0 +1,6 @@
+[Service]
+Type=simple
+WorkingDirectory=/vagrant
+User=vagrant
+Group=vagrant
+ExecStart=/usr/bin/nodemon /vagrant/bin/www

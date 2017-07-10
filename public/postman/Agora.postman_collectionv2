@@ -1,0 +1,287 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Agora",
+		"_postman_id": "42d428d5-c71e-7f20-fde2-9046758a8970",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Matches",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Matches",
+					"request": {
+						"url": "http://localhost:3000/api/matches/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"players\": [{\"_id\": \"55617e881c56419e42be742e\"}]}"
+						},
+						"description": "Get All Matches"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new player(s) to match",
+					"request": {
+						"url": "{{baseUrl}}/api/matches/{{matchId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"players\": [{\"_id\": \"88617e881c56419e42be742e\"}, {\"_id\": \"99617e881c56419e42be742e\"}]}"
+						},
+						"description": "Add new player to match"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Create New User",
+					"request": {
+						"url": "{{baseUrl}}/api/users/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "m.solimanz@hotmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "m.solimanz",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Muhammad",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Soliman",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Create New User"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users (Personal Info)",
+					"request": {
+						"url": "{{baseUrl}}/api/users/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get All Users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users (Full Profiles)",
+					"request": {
+						"url": "{{baseUrl}}/api/users/full",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get Users (Full Profiles)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id (Personal Info)",
+					"request": {
+						"url": "{{baseUrl}}/api/users/{{userId}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get User By Id "
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id (Full Profile)",
+					"request": {
+						"url": "{{baseUrl}}/api/users/full/{{userId}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get User By Id (Full Profile)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User's Info By Id",
+					"request": {
+						"url": "{{baseUrl}}/api/users/{{userId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "lastName",
+									"value": "Soliman-Egypt",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update User's Data By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"url": "{{baseUrl}}/api/users/{{userId}}",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Delete User By Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stats For User",
+					"request": {
+						"url": "{{baseUrl}}/api/users/stats/{{userId}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get Stats For User"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Stats For User",
+					"request": {
+						"url": "{{baseUrl}}/api/users/stats/{{userId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "wins",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "losses",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Update Stats For User"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Stats For User",
+					"request": {
+						"url": "{{baseUrl}}/api/users/stats/{{userId}}",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "Reset Stats For User"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Match For User",
+					"request": {
+						"url": "{{baseUrl}}/api/users/match/{{userId}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get Current Match For User"
+					},
+					"response": []
+				},
+				{
+					"name": "Update My Matches",
+					"request": {
+						"url": "{{baseUrl}}/api/users/matches/{{userId}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"matches\": [{\"_id\": \"5961877769f36a9f9a30eb6d\"}]}"
+						},
+						"description": "Update My Matches"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Awards For User",
+					"request": {
+						"url": "{{baseUrl}}/api/users/awards/{{userId}}",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get Awards For User"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
